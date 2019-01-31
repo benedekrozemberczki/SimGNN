@@ -14,6 +14,8 @@ This repository provides a PyTorch implementation of SimGNN as described in the 
 > WSDM, 2019.
 > [[Paper]](http://web.cs.ucla.edu/~yzsun/papers/2019_WSDM_SimGNN.pdf)
 
+A reference Tensorflow implementation is accessible [[here]](https://github.com/Eilene/GWNN).
+
 ### Requirements
 The codebase is implemented in Python 3.5.2. package versions used for development are just below.
 ```
