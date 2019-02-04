@@ -50,7 +50,7 @@ def parameter_parser():
     parser.add_argument("--batch-size",
                         type = int,
                         default = 128,
-	                help = "Order of Chebyshev polynomial. Default is 20.")
+	                help = "Order of Chebyshev polynomial. Default is 128.")
 
     parser.add_argument("--bins",
                         type = int,
