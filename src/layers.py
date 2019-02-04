@@ -11,8 +11,6 @@ class AttentionModule(torch.nn.Module):
     def setup_layers(self):
         self.weight_matrix = torch.nn.Parameter(torch.Tensor(self.args.filters_3, self.args.filters_3)) 
         
-
-
     def init_parameters(self):
         torch.nn.init.xavier_uniform_(self.weight_matrix)
 
