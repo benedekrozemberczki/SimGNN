@@ -72,14 +72,14 @@ Training a SimGNN model is handled by the `src/main.py` script which provides th
 ```
 
 ### Examples
-The following commands learn a neural network, make predictions, create logs, and write the latter ones to disk.
+The following commands learn a neural network and score on the test set.
 
 Training a GAM model on the default dataset. Saving predictions and logs at default paths.
 ```
 python src/main.py
 ```
 <p align="center">
-<img style="float: center;" src="simgnn_running.jpg">
+<img style="float: center;" src="simgnn_run.jpg">
 </p>
 
 Training a GAM model for a 100 epochs with a batch size of 512.
