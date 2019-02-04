@@ -1,6 +1,6 @@
+from utils import tab_printer
 from simgnn import SimGNNTrainer
 from parser import parameter_parser
-from utils import tab_printer
 
 def main():
     """
