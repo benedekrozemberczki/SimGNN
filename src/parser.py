@@ -2,11 +2,11 @@ import argparse
 
 def parameter_parser():
     """
-    A method to parse up command line parameters. By default it trains on the Cora dataset.
-    The default hyperparameters give a good quality model without grid search.
+    A method to parse up command line parameters.
+    The default hyperparameters give a high performance model without grid search.
     """
 
-    parser = argparse.ArgumentParser(description = "Run GWNN.")
+    parser = argparse.ArgumentParser(description = "Run SimGNN.")
 
     parser.add_argument("--training-graphs",
                         nargs = "?",
