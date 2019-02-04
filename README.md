@@ -81,7 +81,7 @@ Training a GAM model on the default dataset. Saving predictions and logs at defa
 python src/main.py
 ```
 <p align="center">
-<img style="float: center;" src="gam_running.jpg">
+<img style="float: center;" src="simgnn_running.jpg">
 </p>
 
 Training a GAM model for a 100 epochs with a batch size of 512.
