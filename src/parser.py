@@ -55,7 +55,7 @@ def parameter_parser():
     parser.add_argument("--bins",
                         type = int,
                         default = 16,
-	                help = "Filters (neurons) in convolution. Default is 16.")
+	                help = "Similarity score bins. Default is 16.")
 
     parser.add_argument("--dropout",
                         type = float,
