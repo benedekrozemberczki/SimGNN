@@ -74,7 +74,7 @@ Training a SimGNN model is handled by the `src/main.py` script which provides th
 ### Examples
 The following commands learn a neural network and score on the test set.
 
-Training a GAM model on the default dataset. Saving predictions and logs at default paths.
+Training a SimGNN model on the default dataset. Saving predictions and logs at default paths.
 ```
 python src/main.py
 ```
