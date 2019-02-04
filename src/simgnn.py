@@ -40,9 +40,6 @@ class SimGNN(torch.nn.Module):
         hist = hist/torch.sum(hist)
         hist = hist.view(1,-1)
         return hist
-      
-         
-
 
     def convolutional_pass(self, edge_index, features):
         features = self.convolution_1(features, edge_index)
