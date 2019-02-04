@@ -82,15 +82,7 @@ python src/main.py
 <img style="float: center;" src="simgnn_run.jpg">
 </p>
 
-Training a GAM model for a 100 epochs with a batch size of 512.
+Training a SimGNN model for a 100 epochs with a batch size of 512.
 ```
 python src/main.py --epochs 100 --batch-size 512
-```
-Setting a high time budget for the agent.
-```
-python src/main.py --time 128
-```
-Training a model with some custom learning rate and epoch number.
-```
-python src/main.py --learning-rate 0.001 --epochs 200
 ```
