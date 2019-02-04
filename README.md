@@ -34,9 +34,9 @@ scikit-learn      0.20.0
 ```
 ### Datasets
 
-The code takes graphs for training from an input folder where each graph is stored as a JSON. Graphs used for testing are also stored as JSON files. Every node id, node label and class has to be indexed from 0. Keys of dictionaries and nested dictionaries are stored strings in order to make JSON serialization possible.
+The code takes pairs of graphs for training from an input folder where each pair of graph is stored as a JSON. Pairs of graphs used for testing are also stored as JSON files. Every node id and node label has to be indexed from 0. Keys of dictionaries and are stored strings in order to make JSON serialization possible.
 
-For example these JSON files have the following key-value structure:
+Every JSON file has the following key-value structure:
 
 ```javascript
 {"target": 1,
@@ -48,7 +48,7 @@ The **target key** has an integer value, which is the ID of the target class (e.
 
 ### Options
 
-Training a GAM model is handled by the `src/main.py` script which provides the following command line arguments.
+Training a SimGNN model is handled by the `src/main.py` script which provides the following command line arguments.
 
 #### Input and output options
 
