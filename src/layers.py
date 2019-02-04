@@ -14,7 +14,6 @@ class AttentionModule(torch.nn.Module):
     def init_parameters(self):
         torch.nn.init.xavier_uniform_(self.weight_matrix)
 
-
     def forward(self, embedding):
         global_context = torch.mean(torch.matmul(embedding, self.weight_matrix), dim=0)
         transformed_global = torch.tanh(global_context)
