@@ -61,6 +61,9 @@ Training a SimGNN model is handled by the `src/main.py` script which provides th
 #### Model options
 
 ```
+  --filters-1            INT         Number of filter in 1st GCN layer.       Default is 128.
+  --filters-2            INT         Number of filter in 2nd GCN layer.       Default is 64. 
+  --filters-3            INT         Number of filter in 3rd GCN layer.       Default is 32. 
   --batch-size           INT         Number of pairs processed per batch.     Default is 128. 
   --epochs               INT         Number of SimGNN training epochs.        Default is 5. 
   --learning-rate        FLOAT       Learning rate.                           Default is 0.001.
