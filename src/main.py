@@ -4,7 +4,7 @@ from utils import tab_printer
 
 def main():
     """
-    Parsing command line parameters, reading data, doing sparsification, fitting a GWNN and saving the logs.
+    Parsing command line parameters, reading data, fitting and scoring a SimGNN model.
     """
     args = parameter_parser()
     tab_printer(args)
@@ -12,6 +12,5 @@ def main():
     trainer.fit()
     trainer.score()
     
-
 if __name__ == "__main__":
     main()
