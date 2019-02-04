@@ -8,7 +8,6 @@ class AttentionModule(torch.nn.Module):
         self.setup_layers()
         self.init_parameters()
 
-
     def setup_layers(self):
         self.weight_matrix = torch.nn.Parameter(torch.Tensor(self.args.filters_3, self.args.filters_3)) 
         
