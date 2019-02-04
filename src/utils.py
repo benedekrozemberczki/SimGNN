@@ -1,7 +1,7 @@
-from texttable import Texttable
 import json
-import networkx as nx
 import math
+import networkx as nx
+from texttable import Texttable
 
 def tab_printer(args):
     """
