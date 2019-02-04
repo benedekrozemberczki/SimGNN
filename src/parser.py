@@ -25,17 +25,17 @@ def parameter_parser():
     parser.add_argument("--filters-1",
                         type = int,
                         default = 128,
-	                help = "Filters (neurons) in convolution. Default is 128.")
+	                help = "Filters (neurons) in 1st convolution. Default is 128.")
 
     parser.add_argument("--filters-2",
                         type = int,
                         default = 64,
-	                help = "Filters (neurons) in convolution. Default is 64.")
+	                help = "Filters (neurons) in 2nd convolution. Default is 64.")
 
     parser.add_argument("--filters-3",
                         type = int,
                         default = 32,
-	                help = "Filters (neurons) in convolution. Default is 32.")
+	                help = "Filters (neurons) in 3rd convolution. Default is 32.")
 
     parser.add_argument("--tensor-neurons",
                         type = int,
