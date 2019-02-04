@@ -60,13 +60,18 @@ Training a SimGNN model is handled by the `src/main.py` script which provides th
 #### Model options
 
 ```
-  --filters-1            INT         Number of filter in 1st GCN layer.       Default is 128.
-  --filters-2            INT         Number of filter in 2nd GCN layer.       Default is 64. 
-  --filters-3            INT         Number of filter in 3rd GCN layer.       Default is 32. 
-  --batch-size           INT         Number of pairs processed per batch.     Default is 128. 
-  --epochs               INT         Number of SimGNN training epochs.        Default is 5. 
-  --learning-rate        FLOAT       Learning rate.                           Default is 0.001.
-  --weight-decay         FLOAT       Weight decay.                            Default is 10^-5. 
+  --filters-1             INT         Number of filter in 1st GCN layer.       Default is 128.
+  --filters-2             INT         Number of filter in 2nd GCN layer.       Default is 64. 
+  --filters-3             INT         Number of filter in 3rd GCN layer.       Default is 32.
+  --tensor-neurons        INT         Neurons in tensor network layer.         Default is 16.
+  --bottle-neck-neurons   INT         Bottle neck layer neurons.               Default is 16.
+  --bins                  INT         Number of histogram bins.                Default is 16.
+  --batch-size            INT         Number of pairs processed per batch.     Default is 128. 
+  --epochs                INT         Number of SimGNN training epochs.        Default is 5.
+  --dropout               FLOAT       Dropout rate.                            Default is 0.5.
+  --learning-rate         FLOAT       Learning rate.                           Default is 0.001.
+  --weight-decay          FLOAT       Weight decay.                            Default is 10^-5.
+  --histogram             BOOL        Include histogram features.              Default is False.
 ```
 
 ### Examples
