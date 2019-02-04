@@ -55,8 +55,6 @@ Training a GAM model is handled by the `src/main.py` script which provides the f
 ```
   --train-graph-folder   STR    Training graphs folder.      Default is `input/train/`.
   --test-graph-folder    STR    Testing graphs folder.       Default is `input/test/`.
-  --prediction-path      STR    Path to store labels.        Default is `output/erdos_predictions.csv`.
-  --log-path             STR    Log json path.               Default is `logs/erdos_gam_logs.json`. 
 ```
 
 #### Model options
