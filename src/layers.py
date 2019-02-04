@@ -34,9 +34,6 @@ class TenorNetworkModule(torch.nn.Module):
         self.weight_matrix_block = torch.nn.Parameter(torch.Tensor(self.args.tensor_neurons, 2*self.args.filters_3))
         self.bias = torch.nn.Parameter(torch.Tensor(self.args.tensor_neurons, 1))
 
-        
-
-
     def init_parameters(self):
         torch.nn.init.xavier_uniform_(self.weight_matrix)
         torch.nn.init.xavier_uniform_(self.weight_matrix_block)
