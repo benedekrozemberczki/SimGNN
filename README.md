@@ -34,17 +34,18 @@ scikit-learn      0.20.0
 ```
 ### Datasets
 
-The code takes pairs of graphs for training from an input folder where each pair of graph is stored as a JSON. Pairs of graphs used for testing are also stored as JSON files. Every node id and node label has to be indexed from 0. Keys of dictionaries and are stored strings in order to make JSON serialization possible.
+The code takes pairs of graphs for training from an input folder where each pair of graph is stored as a JSON. Pairs of graphs used for testing are also stored as JSON files. Every node id and node label has to be indexed from 0. Keys of dictionaries are stored strings in order to make JSON serialization possible.
 
 Every JSON file has the following key-value structure:
 
 ```javascript
-{"target": 1,
- "edges": [[0, 1], [0, 4], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]],
- "labels": {"0": 2, "1": 3, "2": 2, "3": 3, "4": 4},
- "inverse_labels": {"2": [0, 2], "3": [1, 3], "4": [4]}}
+{"graph_1": [[0, 1],[1, 2],[2, 3],[3, 4]],
+ "graph_2": [[0, 1], [1, 2], [1, 3], [3, 4], [2, 4]],
+ "labels_1": [2, 2, 2, 2],
+ "labels_2": [2, 3, 2, 3],
+ "ged": 1}
 ```
-The **target key** has an integer value, which is the ID of the target class (e.g. Carcinogenicity). The **edges key** has an edge list value for the graph of interest. The **labels key** has a dictonary value for each node, these labels are stored as key-value pairs (e.g. node - atom pair). The **inverse_labels key** has a key for each node label and the values are lists containing the nodes that have a specific node label.
+The **graph_1** and **graph_2** keys have edge list values which descibe the connectivity structure. Similarly, the **labels_1**  amd **labels_2** have labels for each node which are stored as list - positions in the list correspond to node identifiers. The **ged** key has an integer value which is the raw graph edit distance for the pair of graphs.
 
 ### Options
 
