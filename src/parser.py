@@ -10,7 +10,7 @@ def parameter_parser():
     parser.add_argument("--training-graphs",
                         nargs = "?",
                         default = "./dataset/train/",
-	                help = "Edge list csv.")
+	                help = "Folder with training jsons.")
 
     parser.add_argument("--testing-graphs",
                         nargs = "?",
