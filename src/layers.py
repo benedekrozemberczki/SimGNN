@@ -39,7 +39,6 @@ class TenorNetworkModule(torch.nn.Module):
         torch.nn.init.xavier_uniform_(self.weight_matrix_block)
         torch.nn.init.xavier_uniform_(self.bias)
 
-
     def forward(self, embedding_1, embedding_2):
         scoring = torch.mm(torch.t(embedding_1), self.weight_matrix.view(self.args.filters_3,-1)).view(self.args.filters_3, self.args.tensor_neurons)
         scoring = torch.mm(torch.t(scoring),embedding_2)
