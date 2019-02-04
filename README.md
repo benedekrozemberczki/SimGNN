@@ -54,21 +54,16 @@ Training a SimGNN model is handled by the `src/main.py` script which provides th
 #### Input and output options
 
 ```
-  --train-graph-folder   STR    Training graphs folder.      Default is `input/train/`.
-  --test-graph-folder    STR    Testing graphs folder.       Default is `input/test/`.
+  --training-graphs   STR    Training graphs folder.      Default is `dataset/train/`.
+  --testing-graphs    STR    Testing graphs folder.       Default is `dataset/test/`.
 ```
 
 #### Model options
 
 ```
-  --repetitions          INT         Number of scoring runs.                  Default is 10. 
-  --batch-size           INT         Number of graphs processed per batch.    Default is 32. 
-  --time                 INT         Time budget.                             Default is 20. 
-  --step-dimensions      INT         Neurons in step layer.                   Default is 32. 
-  --combined-dimensions  INT         Neurons in shared layer.                 Default is 64. 
-  --epochs               INT         Number of GAM training epochs.           Default is 10. 
+  --batch-size           INT         Number of pairs processed per batch.     Default is 128. 
+  --epochs               INT         Number of SimGNN training epochs.        Default is 5. 
   --learning-rate        FLOAT       Learning rate.                           Default is 0.001.
-  --gamma                FLOAT       Discount rate.                           Default is 0.99. 
   --weight-decay         FLOAT       Weight decay.                            Default is 10^-5. 
 ```
 
