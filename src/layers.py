@@ -5,10 +5,10 @@ class AttentionModule(torch.nn.Module):
     def __init__(self, args):
         super(AttentionModule, self).__init__()
         self.args = args
-        self.setup_layers()
+        self.setup_weights()
         self.init_parameters()
 
-    def setup_layers(self):
+    def setup_weights(self):
         self.weight_matrix = torch.nn.Parameter(torch.Tensor(self.args.filters_3, self.args.filters_3)) 
         
     def init_parameters(self):
@@ -26,10 +26,10 @@ class TenorNetworkModule(torch.nn.Module):
     def __init__(self,args):
         super(TenorNetworkModule, self).__init__()
         self.args = args
-        self.setup_layers()
+        self.setup_weights()
         self.init_parameters()
 
-    def setup_layers(self):
+    def setup_weights(self):
         self.weight_matrix = torch.nn.Parameter(torch.Tensor(self.args.filters_3, self.args.filters_3, self.args.tensor_neurons))
         self.weight_matrix_block = torch.nn.Parameter(torch.Tensor(self.args.tensor_neurons, 2*self.args.filters_3))
         self.bias = torch.nn.Parameter(torch.Tensor(self.args.tensor_neurons, 1))
