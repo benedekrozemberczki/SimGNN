@@ -89,3 +89,15 @@ Training a SimGNN model for a 100 epochs with a batch size of 512.
 ```
 python src/main.py --epochs 100 --batch-size 512
 ```
+Training a SimGNN with histogram features.
+```
+python src/main.py --histogram
+```
+Training a SimGNN with histogram features and a large bin number.
+```
+python src/main.py --histogram --bins 32
+```
+Increasing the learning rate and the dropout.
+```
+python src/main.py --learning-rate 0.01 --dropout 0.9
+```
