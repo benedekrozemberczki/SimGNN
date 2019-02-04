@@ -5,7 +5,6 @@ def parameter_parser():
     A method to parse up command line parameters.
     The default hyperparameters give a high performance model without grid search.
     """
-
     parser = argparse.ArgumentParser(description = "Run SimGNN.")
 
     parser.add_argument("--training-graphs",
