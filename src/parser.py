@@ -40,12 +40,12 @@ def parameter_parser():
     parser.add_argument("--tensor-neurons",
                         type = int,
                         default = 16,
-	                help = "Filters (neurons) in convolution. Default is 16.")
+	                help = "Neurons in tensor network layer. Default is 16.")
 
     parser.add_argument("--bottle-neck-neurons",
                         type = int,
                         default = 16,
-	                help = "Order of Chebyshev polynomial. Default is 8.")
+	                help = "Bottle neck layer neurons. Default is 16.")
 
     parser.add_argument("--batch-size",
                         type = int,
@@ -56,11 +56,6 @@ def parameter_parser():
                         type = int,
                         default = 16,
 	                help = "Filters (neurons) in convolution. Default is 16.")
-
-    parser.add_argument("--test-size",
-                        type = float,
-                        default = 0.2,
-	                help = "Ratio of training samples. Default is 0.2.")
 
     parser.add_argument("--dropout",
                         type = float,
