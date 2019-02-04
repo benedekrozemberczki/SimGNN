@@ -21,7 +21,6 @@ class AttentionModule(torch.nn.Module):
         representation = torch.mm(torch.t(embedding),sigmoid_scores)
         return representation
 
-
 class TenorNetworkModule(torch.nn.Module):
     
     def __init__(self,args):
