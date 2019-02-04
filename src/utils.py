@@ -14,7 +14,6 @@ def tab_printer(args):
     t.add_rows([["Parameter", "Value"]] +  [[k.replace("_"," ").capitalize(),args[k]] for k in keys])
     print(t.draw())
 
-
 def process_pair(path):
     data = json.load(open(path))
     return data
