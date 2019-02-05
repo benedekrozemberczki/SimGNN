@@ -139,7 +139,6 @@ class SimGNNTrainer(object):
         self.global_labels = {val:index  for index, val in enumerate(self.global_labels)}
         self.number_of_labels = len(self.global_labels)
          
-
     def create_batches(self):
         random.shuffle(self.training_graphs)
         batches = [self.training_graphs[graph:graph+self.args.batch_size] for graph in range(0, len(self.training_graphs), self.args.batch_size)]
