@@ -61,6 +61,12 @@ class SimGNN(torch.nn.Module):
         return hist
 
     def convolutional_pass(self, edge_index, features):
+        """
+        Making convolutional pass.
+        :param edge_index:
+        :param features: 
+        :return features:  
+        """
         features = self.convolution_1(features, edge_index)
         features = torch.nn.functional.relu(features)
         features = torch.nn.functional.dropout(features, training=self.training)
