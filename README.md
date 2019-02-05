@@ -73,7 +73,6 @@ Training a SimGNN model is handled by the `src/main.py` script which provides th
   --weight-decay          FLOAT       Weight decay.                            Default is 10^-5.
   --histogram             BOOL        Include histogram features.              Default is False.
 ```
-
 ### Examples
 The following commands learn a neural network and score on the test set. Training a SimGNN model on the default dataset.
 ```
