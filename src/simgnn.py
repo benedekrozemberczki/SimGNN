@@ -15,6 +15,10 @@ class SimGNN(torch.nn.Module):
     https://arxiv.org/abs/1808.05689
     """
     def __init__(self, args, number_of_labels):
+        """
+        :param args:
+        :param number_of_labels:
+        """
         super(SimGNN, self).__init__()
         self.args = args
         self.number_labels = number_of_labels
