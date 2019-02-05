@@ -140,6 +140,10 @@ class SimGNNTrainer(object):
         self.number_of_labels = len(self.global_labels)
          
     def create_batches(self):
+        """
+        Creating batches from the training graph list.
+        :return batches: List of lists with batches.
+        """
         random.shuffle(self.training_graphs)
         batches = [self.training_graphs[graph:graph+self.args.batch_size] for graph in range(0, len(self.training_graphs), self.args.batch_size)]
         return batches
