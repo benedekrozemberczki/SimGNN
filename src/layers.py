@@ -23,6 +23,9 @@ class AttentionModule(torch.nn.Module):
         torch.nn.init.xavier_uniform_(self.weight_matrix)
 
     def forward(self, embedding):
+        """
+        Making a forward pass to create a graph level representation.
+        """
         global_context = torch.mean(torch.matmul(embedding, self.weight_matrix), dim=0)
         transformed_global = torch.tanh(global_context)
         sigmoid_scores = torch.sigmoid(torch.mm(embedding,transformed_global.view(-1,1)))
