@@ -33,7 +33,6 @@ torchvision       0.2.1
 scikit-learn      0.20.0
 ```
 ### Datasets
-
 The code takes pairs of graphs for training from an input folder where each pair of graph is stored as a JSON. Pairs of graphs used for testing are also stored as JSON files. Every node id and node label has to be indexed from 0. Keys of dictionaries are stored strings in order to make JSON serialization possible.
 
 Every JSON file has the following key-value structure:
@@ -48,17 +47,14 @@ Every JSON file has the following key-value structure:
 The **graph_1** and **graph_2** keys have edge list values which descibe the connectivity structure. Similarly, the **labels_1**  and **labels_2** keys have labels for each node which are stored as list - positions in the list correspond to node identifiers. The **ged** key has an integer value which is the raw graph edit distance for the pair of graphs.
 
 ### Options
-
 Training a SimGNN model is handled by the `src/main.py` script which provides the following command line arguments.
 
 #### Input and output options
-
 ```
   --training-graphs   STR    Training graphs folder.      Default is `dataset/train/`.
   --testing-graphs    STR    Testing graphs folder.       Default is `dataset/test/`.
 ```
 #### Model options
-
 ```
   --filters-1             INT         Number of filter in 1st GCN layer.       Default is 128.
   --filters-2             INT         Number of filter in 2nd GCN layer.       Default is 64. 
