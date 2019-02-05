@@ -5,6 +5,9 @@ class AttentionModule(torch.nn.Module):
     SimGNN Attention Module to make a pass on graph.
     """
     def __init__(self, args):
+        """
+        :param args: Arguments object.
+        """
         super(AttentionModule, self).__init__()
         self.args = args
         self.setup_weights()
@@ -39,6 +42,9 @@ class TenorNetworkModule(torch.nn.Module):
     SimGNN Tensor Network module to calculate similarity vector.
     """
     def __init__(self,args):
+        """
+        :param args: Arguments object.
+        """
         super(TenorNetworkModule, self).__init__()
         self.args = args
         self.setup_weights()
