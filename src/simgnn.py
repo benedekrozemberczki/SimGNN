@@ -49,9 +49,9 @@ class SimGNN(torch.nn.Module):
     def calculate_histogram(self, abstract_features_1, abstract_features_2):
         """
         Calculate histogram from similarity matrix.
-        :param abstract_features_1:
-        :param abstract_features_2:
-        :return hist:
+        :param abstract_features_1: Feature matrix for graph 1.
+        :param abstract_features_2: Feature matrix for graph 2.
+        :return hist: Histsogram of similarity scores.
         """
         scores = torch.mm(abstract_features_1, abstract_features_2).detach()
         scores = scores.view(-1,1)
