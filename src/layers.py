@@ -62,8 +62,8 @@ class TenorNetworkModule(torch.nn.Module):
 
     def forward(self, embedding_1, embedding_2):
         scoring = torch.mm(torch.t(embedding_1), self.weight_matrix.view(self.args.filters_3,-1)).view(self.args.filters_3, self.args.tensor_neurons)
-        scoring = torch.mm(torch.t(scoring),embedding_2)
-        combined_representation = torch.cat((embedding_1,embedding_2))
+        scoring = torch.mm(torch.t(scoring), embedding_2)
+        combined_representation = torch.cat((embedding_1, embedding_2))
         block_scoring = torch.mm(self.weight_matrix_block, combined_representation)
         scores = torch.nn.functional.relu(scoring + block_scoring  + self.bias)
         return scores
