@@ -25,8 +25,10 @@ def process_pair(path):
 
 def calculate_loss(prediction, target):
     """
-    Reading a graph with data.
-    
+    Calculating the squared loss on the normalized GED.
+    :param prediction: Predicted log value of GED.
+    :param target: Factual log transofmed GED.
+    :return score: Squared error.
     """
     prediction = -math.log(prediction)
     target = -math.log(target)
@@ -34,5 +36,8 @@ def calculate_loss(prediction, target):
     return score
 
 def calculate_normalized_ged(data):
+    """
+    :
+    """
     norm_ged = data["ged"]/(0.5*(len(data["labels_1"])+len(data["labels_2"])))
     return norm_ged
