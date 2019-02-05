@@ -149,6 +149,11 @@ class SimGNNTrainer(object):
         return batches
 
     def transfer_to_torch(self, data):
+        """
+        Transferring the data to torch and creating a hash table with the indices, features and target.
+        :param data: Data dictionary.
+        :return new_data: Dictionary of Torch Tensors.
+        """
         new_data = dict()
         edges_1 = torch.from_numpy(np.array(data["graph_1"], dtype=np.int64).T).type(torch.long)
         edges_2 = torch.from_numpy(np.array(data["graph_2"], dtype=np.int64).T).type(torch.long)
