@@ -109,14 +109,23 @@ class SimGNNTrainer(object):
     SimGNN model trainer.
     """
     def __init__(self, args):
+        """
+        :param args: Arguments object.
+        """
         self.args = args
         self.initial_label_enumeration()
         self.setup_model()
 
     def setup_model(self):
+        """
+        Creating a SimGNN.
+        """
         self.model = SimGNN(self.args, self.number_of_labels)
         
     def initial_label_enumeration(self):
+        """
+        Collecting the unique node idsentifiers.
+        """
         print("\nEnumerating unique labels.\n")
         self.training_graphs = glob.glob(self.args.training_graphs + "*.json")
         self.testing_graphs = glob.glob(self.args.testing_graphs + "*.json")
