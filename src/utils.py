@@ -37,7 +37,7 @@ def calculate_loss(prediction, target):
 
 def calculate_normalized_ged(data):
     """
-    Calculating the normalized ged.
+    Calculating the normalized GED.
     :param data: Data table.
     :return norm_ged: Normalized GED score.
     """
