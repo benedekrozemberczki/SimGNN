@@ -71,6 +71,11 @@ class SimGNN(torch.nn.Module):
         return features
 
     def forward(self, data):
+        """
+        Forward pass with graphs.
+        :param data: Data dictiyonary.
+        :return score: Similarity score.
+        """
         edge_index_1 = data["edge_index_1"]
         edge_index_2 = data["edge_index_2"]
         features_1 = data["features_1"]
