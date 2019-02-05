@@ -166,7 +166,6 @@ class SimGNNTrainer(object):
         new_data["features_2"] = features_2
         normalized_ged = data["ged"]/(0.5*(len(data["labels_1"])+len(data["labels_2"])))
         new_data["target"] =  torch.from_numpy(np.exp(-normalized_ged).reshape(1,1)).view(-1).float()
-
         return new_data
 
     def process_batch(self, batch):
@@ -182,12 +181,11 @@ class SimGNNTrainer(object):
             data = self.transfer_to_torch(data)
             target = self.model(data)
             prediction = self.model(data)
-            losses = losses + torch.nn.functional.mse_loss(data["target"],prediction)
+            losses = losses + torch.nn.functional.mse_loss(data["target"], prediction)
         losses.backward(retain_graph = True)
         self.optimizer.step()
         loss = losses.item()
         return loss
-
 
     def fit(self):
         """
