@@ -1,7 +1,9 @@
 import torch
 
 class AttentionModule(torch.nn.Module):
-
+    """
+    SimGNN Attention Module to make a pass on graph.
+    """
     def __init__(self, args):
         super(AttentionModule, self).__init__()
         self.args = args
