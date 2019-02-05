@@ -15,10 +15,19 @@ def tab_printer(args):
     print(t.draw())
 
 def process_pair(path):
+    """
+    Reading a json file with a pair of graphs.
+    :param path: Path to a JSON file.
+    :return data: Dictionary with data.
+    """
     data = json.load(open(path))
     return data
 
 def calculate_loss(prediction, target):
+    """
+    Reading a graph with data.
+    
+    """
     prediction = -math.log(prediction)
     target = -math.log(target)
     score = (prediction-target)**2
