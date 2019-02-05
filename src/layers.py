@@ -25,6 +25,7 @@ class AttentionModule(torch.nn.Module):
     def forward(self, embedding):
         """
         Making a forward propagation pass to create a graph level representation.
+        :param embedding: Result of the GCN.
         """
         global_context = torch.mean(torch.matmul(embedding, self.weight_matrix), dim=0)
         transformed_global = torch.tanh(global_context)
