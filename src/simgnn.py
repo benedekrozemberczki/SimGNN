@@ -195,6 +195,8 @@ class SimGNNTrainer(object):
         self.print_evaluation()
 
     def print_evaluation(self):
+        """
+        """
         norm_ged_mean = np.mean(self.ground_truth)
         base_error= np.mean([(n-norm_ged_mean)**2 for n in self.ground_truth])
         model_error = np.mean(self.scores)
