@@ -75,22 +75,22 @@ class SimGNN(torch.nn.Module):
         edge_index_2 = data["edge_index_2"]
         features_1 = data["features_1"]
         features_2 = data["features_2"]
-
         abstract_features_1 = self.convolutional_pass(edge_index_1, features_1)
         abstract_features_2 = self.convolutional_pass(edge_index_2, features_2)
+        
         if self.args.histogram == True:
             hist =self.calculate_histogram(abstract_features_1, torch.t(abstract_features_2))
-        
         
         pooled_features_1 =  self.attention(abstract_features_1)
         pooled_features_2 = self.attention(abstract_features_2)
         scores = self.tensor_network(pooled_features_1, pooled_features_2)
         scores = torch.t(scores)
+        
         if self.args.histogram == True:
             scores = torch.cat((scores,hist),dim=1).view(1,-1)
+            
         scores = torch.nn.functional.relu(self.fully_connected_first(scores))
         score = torch.sigmoid(self.scoring_layer(scores))
-
         return score
 
 
