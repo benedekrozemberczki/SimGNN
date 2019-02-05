@@ -70,7 +70,6 @@ class SimGNN(torch.nn.Module):
         features = self.convolution_3(features, edge_index)
         return features
 
-
     def forward(self, data):
         edge_index_1 = data["edge_index_1"]
         edge_index_2 = data["edge_index_2"]
