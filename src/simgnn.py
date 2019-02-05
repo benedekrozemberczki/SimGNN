@@ -25,6 +25,9 @@ class SimGNN(torch.nn.Module):
         self.setup_layers()
 
     def calculate_bottleneck_features(self):
+        """
+        Deciding the shape of the bottleneck layer.
+        """
         if self.args.histogram == True:
             self.feature_count = self.args.tensor_neurons + self.args.bins
         else:
