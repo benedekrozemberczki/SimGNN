@@ -44,13 +44,16 @@ class TenorNetworkModule(torch.nn.Module):
 
     def setup_weights(self):
         """
-        Initializing weights.
+        Defining weights.
         """
         self.weight_matrix = torch.nn.Parameter(torch.Tensor(self.args.filters_3, self.args.filters_3, self.args.tensor_neurons))
         self.weight_matrix_block = torch.nn.Parameter(torch.Tensor(self.args.tensor_neurons, 2*self.args.filters_3))
         self.bias = torch.nn.Parameter(torch.Tensor(self.args.tensor_neurons, 1))
 
     def init_parameters(self):
+        """
+        Initializing weights.
+        """
         torch.nn.init.xavier_uniform_(self.weight_matrix)
         torch.nn.init.xavier_uniform_(self.weight_matrix_block)
         torch.nn.init.xavier_uniform_(self.bias)
