@@ -17,6 +17,9 @@ class AttentionModule(torch.nn.Module):
         self.weight_matrix = torch.nn.Parameter(torch.Tensor(self.args.filters_3, self.args.filters_3)) 
         
     def init_parameters(self):
+        """
+        Initializing weights.
+        """
         torch.nn.init.xavier_uniform_(self.weight_matrix)
 
     def forward(self, embedding):
