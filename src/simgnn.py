@@ -164,7 +164,12 @@ class SimGNNTrainer(object):
 
         return new_data
 
-    def process_batch(self,batch):
+    def process_batch(self, batch):
+        """
+        Forward pass with a batch of data.
+        :param batch: Batch of graph pair locations.
+        :return loss: Loss on the batch. 
+        """
         self.optimizer.zero_grad()
         losses = 0
         for graph_pair in batch:
@@ -175,7 +180,8 @@ class SimGNNTrainer(object):
             losses = losses + torch.nn.functional.mse_loss(data["target"],prediction)
         losses.backward(retain_graph = True)
         self.optimizer.step()
-        return losses.item()
+        loss = losses.item()
+        return loss
 
 
     def fit(self):
