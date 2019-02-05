@@ -63,9 +63,9 @@ class SimGNN(torch.nn.Module):
     def convolutional_pass(self, edge_index, features):
         """
         Making convolutional pass.
-        :param edge_index:
-        :param features: 
-        :return features:  
+        :param edge_index: Edge indices.
+        :param features: Feature matrix.
+        :return features: Absstract feature matrix.
         """
         features = self.convolution_1(features, edge_index)
         features = torch.nn.functional.relu(features)
@@ -103,7 +103,6 @@ class SimGNN(torch.nn.Module):
         scores = torch.nn.functional.relu(self.fully_connected_first(scores))
         score = torch.sigmoid(self.scoring_layer(scores))
         return score
-
 
 class SimGNNTrainer(object):
 
