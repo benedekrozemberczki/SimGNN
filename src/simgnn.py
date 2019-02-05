@@ -34,6 +34,9 @@ class SimGNN(torch.nn.Module):
             self.feature_count = self.args.tensor_neurons 
 
     def setup_layers(self):
+        """
+        Creating the layers.
+        """
         self.calculate_bottleneck_features()
         self.convolution_1 = GCNConv(self.number_labels, self.args.filters_1)
         self.convolution_2 = GCNConv(self.args.filters_1, self.args.filters_2)
