@@ -37,6 +37,9 @@ class AttentionModule(torch.nn.Module):
 class TenorNetworkModule(torch.nn.Module):
     
     def __init__(self,args):
+        """
+        SimGNN Tensor Network module to calculate similarity vector.
+        """
         super(TenorNetworkModule, self).__init__()
         self.args = args
         self.setup_weights()
