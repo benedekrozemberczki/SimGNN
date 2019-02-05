@@ -200,5 +200,3 @@ class SimGNNTrainer(object):
         model_error = np.mean(self.scores)
         print("\nBaseline error: " +str(round(base_error,5))+".")
         print("\nModel test error: " +str(round(model_error,5))+".")
-        
-
