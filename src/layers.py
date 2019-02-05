@@ -64,7 +64,8 @@ class TenorNetworkModule(torch.nn.Module):
         
         """
         Making a forward propagation pass to create a similarity vector.
-        :param embedding_1: Result of the GCN.
+        :param embedding_1: Result of the 1st embedding after attention.
+        :param embedding_2: Result of the 2nd embedding after attention.
         :return representation: A graph level representation vector. 
         """
         scoring = torch.mm(torch.t(embedding_1), self.weight_matrix.view(self.args.filters_3,-1)).view(self.args.filters_3, self.args.tensor_neurons)
