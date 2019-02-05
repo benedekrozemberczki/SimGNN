@@ -47,6 +47,12 @@ class SimGNN(torch.nn.Module):
         self.scoring_layer = torch.nn.Linear(self.args.bottle_neck_neurons, 1)
 
     def calculate_histogram(self, abstract_features_1, abstract_features_2):
+        """
+        Calculate histogram from similarity matrix.
+        :param abstract_features_1:
+        :param abstract_features_2:
+        :return hist:
+        """
         scores = torch.mm(abstract_features_1, abstract_features_2).detach()
         scores = scores.view(-1,1)
         hist = torch.histc(scores, bins=self.args.bins)
