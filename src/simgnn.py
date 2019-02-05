@@ -105,7 +105,9 @@ class SimGNN(torch.nn.Module):
         return score
 
 class SimGNNTrainer(object):
-
+    """
+    SimGNN model trainer.
+    """
     def __init__(self, args):
         self.args = args
         self.initial_label_enumeration()
@@ -113,8 +115,7 @@ class SimGNNTrainer(object):
 
     def setup_model(self):
         self.model = SimGNN(self.args, self.number_of_labels)
-
-
+        
     def initial_label_enumeration(self):
         print("\nEnumerating unique labels.\n")
         self.training_graphs = glob.glob(self.args.training_graphs + "*.json")
