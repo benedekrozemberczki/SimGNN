@@ -179,7 +179,7 @@ class SimGNNTrainer(object):
         for graph_pair in batch:
             data = process_pair(graph_pair)
             data = self.transfer_to_torch(data)
-            target = self.model(data)
+            target = data["target"]
             prediction = self.model(data)
             losses = losses + torch.nn.functional.mse_loss(data["target"], prediction)
         losses.backward(retain_graph = True)
