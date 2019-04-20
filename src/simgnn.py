@@ -211,13 +211,14 @@ class SimGNNTrainer(object):
         Scoring on the test set.
         """
         print("\n\nModel evaluation.\n")
+        self.model.eval()
         self.scores = []
         self.ground_truth = []
         for graph_pair in tqdm(self.testing_graphs):
             data = process_pair(graph_pair)
             self.ground_truth.append(calculate_normalized_ged(data))
             data = self.transfer_to_torch(data)
-            target = self.model(data)
+            target = data["target"]
             prediction = self.model(data)
             self.scores.append(calculate_loss(prediction, target))
         self.print_evaluation()
