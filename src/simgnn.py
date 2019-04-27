@@ -158,8 +158,8 @@ class SimGNNTrainer(object):
         edges_1 = torch.from_numpy(np.array(data["graph_1"], dtype=np.int64).T).type(torch.long)
         edges_2 = torch.from_numpy(np.array(data["graph_2"], dtype=np.int64).T).type(torch.long)
 
-        features_1 = torch.FloatTensor(np.array([[ 1.0 if int(self.global_labels[node]) == int(label) else 0 for label in self.global_labels] for node in data["labels_1"]]))
-        features_2 = torch.FloatTensor(np.array([[ 1.0 if int(self.global_labels[node]) == int(label) else 0 for label in self.global_labels] for node in data["labels_2"]]))
+        features_1 = torch.FloatTensor(np.array([[ 1.0 if self.global_labels[node] == label_index else 0 for label_index in self.global_labels.values()] for node in data["labels_1"]]))
+        features_2 = torch.FloatTensor(np.array([[ 1.0 if self.global_labels[node] == label_index else 0 for label_index in self.global_labels.values()] for node in data["labels_2"]]))
         new_data["edge_index_1"] = edges_1
         new_data["edge_index_2"] = edges_2
         new_data["features_1"] = features_1
