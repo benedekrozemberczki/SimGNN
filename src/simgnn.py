@@ -69,10 +69,10 @@ class SimGNN(torch.nn.Module):
         """
         features = self.convolution_1(features, edge_index)
         features = torch.nn.functional.relu(features)
-        features = torch.nn.functional.dropout(features, training=self.training)
+        features = torch.nn.functional.dropout(features, p=self.args.dropout, training=self.training)
         features = self.convolution_2(features, edge_index)
         features = torch.nn.functional.relu(features)
-        features = torch.nn.functional.dropout(features, training=self.training)
+        features = torch.nn.functional.dropout(features, p=self.args.dropout, training=self.training)
         features = self.convolution_3(features, edge_index)
         return features
 
