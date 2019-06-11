@@ -188,6 +188,9 @@ class SimGNNTrainer(object):
         return loss
 
     def fit(self):
+        """
+        Fitting a model.
+        """
         print("\nModel training.\n")
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.learning_rate, weight_decay=self.args.weight_decay)
         self.model.train()
