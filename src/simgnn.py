@@ -188,23 +188,20 @@ class SimGNNTrainer(object):
         return loss
 
     def fit(self):
-        """
-        Training a model.
-        """
         print("\nModel training.\n")
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.learning_rate, weight_decay=self.args.weight_decay)
         self.model.train()
         epochs = trange(self.args.epochs, leave=True, desc = "Epoch")
-        main_index = 0
         for epoch in epochs:
             batches = self.create_batches()
             self.loss_sum = 0
+            main_index = 0
             for index, batch in tqdm(enumerate(batches), total=len(batches), desc = "Batches"):
                 loss_score = self.process_batch(batch)
                 main_index = main_index + len(batch)
-                self.loss_sum = self.loss_sum + loss_score
-            loss = self.loss_sum/main_index
-            epochs.set_description("Epoch (Loss=%g)" % round(loss,5))
+                self.loss_sum = self.loss_sum + loss_score * len(batch)
+                loss = self.loss_sum/main_index
+                epochs.set_description("Epoch (Loss=%g)" % round(loss,5))
 
     def score(self):
         """
