@@ -1,7 +1,4 @@
-SimGNN
-	<img src="https://img.shields.io/badge/stars-80+-blue.svg"/>
-        <img src="https://img.shields.io/badge/forks-15+-blue.svg"/>
-	<img src="https://img.shields.io/badge/license-MIT-blue.svg"/>
+SimGNN  ![GitHub stars](https://img.shields.io/github/stars/benedekrozemberczki/SimGNN.svg?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/benedekrozemberczki/SimGNN.svg?color=blue&style=plastic) ![License](https://img.shields.io/github/license/benedekrozemberczki/SimGNN.svg?color=blue&style=plastic)
 ============================================
 A PyTorch implementation of "SimGNN: A Neural Network Approach to Fast Graph Similarity Computation" (WSDM 2019). 
 <p align="center">
