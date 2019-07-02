@@ -155,8 +155,10 @@ class SimGNNTrainer(object):
         :return new_data: Dictionary of Torch Tensors.
         """
         new_data = dict()
-        edges_1 = torch.from_numpy(np.array(data["graph_1"], dtype=np.int64).T).type(torch.long)
-        edges_2 = torch.from_numpy(np.array(data["graph_2"], dtype=np.int64).T).type(torch.long)
+        edges_1 = [[edge[0],edge[1]] for edge in data["graph_1"]] + [[edge[1],edge[0]] for edge in data["graph_1"]]
+        edges_2 = [[edge[0],edge[1]] for edge in data["graph_2"]] + [[edge[1],edge[0]] for edge in data["graph_2"]]
+        edges_1 = torch.from_numpy(np.array(edges_1, dtype=np.int64).T).type(torch.long)
+        edges_2 = torch.from_numpy(np.array(edges_2, dtype=np.int64).T).type(torch.long)
 
         features_1 = torch.FloatTensor(np.array([[ 1.0 if self.global_labels[node] == label_index else 0 for label_index in self.global_labels.values()] for node in data["labels_1"]]))
         features_2 = torch.FloatTensor(np.array([[ 1.0 if self.global_labels[node] == label_index else 0 for label_index in self.global_labels.values()] for node in data["labels_2"]]))
