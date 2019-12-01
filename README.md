@@ -37,7 +37,8 @@ torchvision       0.2.1
 scikit-learn      0.20.0
 ```
 ### Datasets
-The code takes pairs of graphs for training from an input folder where each pair of graph is stored as a JSON. Pairs of graphs used for testing are also stored as JSON files. Every node id and node label has to be indexed from 0. Keys of dictionaries are stored strings in order to make JSON serialization possible.
+<p align="justify">
+The code takes pairs of graphs for training from an input folder where each pair of graph is stored as a JSON. Pairs of graphs used for testing are also stored as JSON files. Every node id and node label has to be indexed from 0. Keys of dictionaries are stored strings in order to make JSON serialization possible.</p>
 
 Every JSON file has the following key-value structure:
 
@@ -48,10 +49,12 @@ Every JSON file has the following key-value structure:
  "labels_2": [2, 3, 2, 3],
  "ged": 1}
 ```
-The **graph_1** and **graph_2** keys have edge list values which descibe the connectivity structure. Similarly, the **labels_1**  and **labels_2** keys have labels for each node which are stored as list - positions in the list correspond to node identifiers. The **ged** key has an integer value which is the raw graph edit distance for the pair of graphs.
+<p align="justify">
+The **graph_1** and **graph_2** keys have edge list values which descibe the connectivity structure. Similarly, the **labels_1**  and **labels_2** keys have labels for each node which are stored as list - positions in the list correspond to node identifiers. The **ged** key has an integer value which is the raw graph edit distance for the pair of graphs.</p>
 
 ### Options
-Training a SimGNN model is handled by the `src/main.py` script which provides the following command line arguments.
+<p align="justify">
+Training a SimGNN model is handled by the `src/main.py` script which provides the following command line arguments.</p>
 
 #### Input and output options
 ```
@@ -74,7 +77,8 @@ Training a SimGNN model is handled by the `src/main.py` script which provides th
   --histogram             BOOL        Include histogram features.              Default is False.
 ```
 ### Examples
-The following commands learn a neural network and score on the test set. Training a SimGNN model on the default dataset.
+<p align="justify">
+The following commands learn a neural network and score on the test set. Training a SimGNN model on the default dataset.</p>
 ```
 python src/main.py
 ```
