@@ -1,94 +1,83 @@
+"""Getting params from the command line."""
+
 import argparse
 
 def parameter_parser():
     """
     A method to parse up command line parameters.
-    By default it gives an embedding of the Bitcoin OTC dataset.
-    The default hyperparameters give a good quality representation without grid search.
-    Representations are sorted by node ID.
+    The default hyperparameters give a high performance model without grid search.
     """
-    parser = argparse.ArgumentParser(description="Run SGCN.")
+    parser = argparse.ArgumentParser(description="Run SimGNN.")
 
-    parser.add_argument("--edge-path",
+    parser.add_argument("--training-graphs",
                         nargs="?",
-                        default="./input/bitcoin_otc.csv",
-	                help="Edge list csv.")
+                        default="./dataset/train/",
+	                help="Folder with training graph pair jsons.")
 
-    parser.add_argument("--features-path",
+    parser.add_argument("--testing-graphs",
                         nargs="?",
-                        default="./input/bitcoin_otc.csv",
-	                help="Edge list csv.")
-
-    parser.add_argument("--embedding-path",
-                        nargs="?",
-                        default="./output/embedding/bitcoin_otc_sgcn.csv",
-	                help="Target embedding csv.")
-
-    parser.add_argument("--regression-weights-path",
-                        nargs="?",
-                        default="./output/weights/bitcoin_otc_sgcn.csv",
-	                help="Regression weights csv.")
-
-    parser.add_argument("--log-path",
-                        nargs="?",
-                        default="./logs/bitcoin_otc_logs.json",
-	                help="Log json.")
+                        default="./dataset/test/",
+	                help="Folder with testing graph pair jsons.")
 
     parser.add_argument("--epochs",
                         type=int,
-                        default=100,
-	                help="Number of training epochs. Default is 100.")
+                        default=5,
+	                help="Number of training epochs. Default is 5.")
 
-    parser.add_argument("--reduction-iterations",
+    parser.add_argument("--filters-1",
                         type=int,
-                        default=30,
-	                help="Number of SVD iterations. Default is 30.")
+                        default=128,
+	                help="Filters (neurons) in 1st convolution. Default is 128.")
 
-    parser.add_argument("--reduction-dimensions",
+    parser.add_argument("--filters-2",
                         type=int,
                         default=64,
-	                help="Number of SVD feature extraction dimensions. Default is 64.")
+	                help="Filters (neurons) in 2nd convolution. Default is 64.")
 
-    parser.add_argument("--seed",
+    parser.add_argument("--filters-3",
                         type=int,
-                        default=42,
-	                help="Random seed for sklearn pre-training. Default is 42.")
+                        default=32,
+	                help="Filters (neurons) in 3rd convolution. Default is 32.")
 
-    parser.add_argument("--lamb",
-                        type=float,
-                        default=1.0,
-	                help="Embedding regularization parameter. Default is 1.0.")
+    parser.add_argument("--tensor-neurons",
+                        type=int,
+                        default=16,
+	                help="Neurons in tensor network layer. Default is 16.")
 
-    parser.add_argument("--test-size",
+    parser.add_argument("--bottle-neck-neurons",
+                        type=int,
+                        default=16,
+	                help="Bottle neck layer neurons. Default is 16.")
+
+    parser.add_argument("--batch-size",
+                        type=int,
+                        default=128,
+	                help="Number of graph pairs per batch. Default is 128.")
+
+    parser.add_argument("--bins",
+                        type=int,
+                        default=16,
+	                help="Similarity score bins. Default is 16.")
+
+    parser.add_argument("--dropout",
                         type=float,
-                        default=0.2,
-	                help="Test dataset size. Default is 0.2.")
+                        default=0.5,
+	                help="Dropout probability. Default is 0.5.")
 
     parser.add_argument("--learning-rate",
                         type=float,
-                        default=0.01,
-	                help="Learning rate. Default is 0.01.")
+                        default=0.001,
+	                help="Learning rate. Default is 0.001.")
 
     parser.add_argument("--weight-decay",
                         type=float,
-                        default=10**-5,
-	                help="Learning rate. Default is 10^-5.")
+                        default=5*10**-4,
+	                help="Adam weight decay. Default is 5*10^-4.")
 
-    parser.add_argument("--layers",
-                        nargs="+",
-                        type=int,
-                        help="Layer dimensions separated by space. E.g. 32 32.")
-
-    parser.add_argument("--spectral-features",
-                        dest="spectral_features",
+    parser.add_argument("--histogram",
+                        dest="histogram",
                         action="store_true")
 
-    parser.add_argument("--general-features",
-                        dest="spectral_features",
-                        action="store_false")
-
-    parser.set_defaults(spectral_features=True)
-
-    parser.set_defaults(layers=[32, 32])
+    parser.set_defaults(histogram=False)
 
     return parser.parse_args()
