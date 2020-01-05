@@ -1,4 +1,4 @@
-SimGNN  ![GitHub stars](https://img.shields.io/github/stars/benedekrozemberczki/SimGNN.svg?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/benedekrozemberczki/SimGNN.svg?color=blue&style=plastic) ![License](https://img.shields.io/github/license/benedekrozemberczki/SimGNN.svg?color=blue&style=plastic)
+SimGNN  [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/simgnn-a-neural-network-approach-to-fast/graph-similarity-on-imdb)](https://paperswithcode.com/sota/graph-similarity-on-imdb?p=simgnn-a-neural-network-approach-to-fast) ![GitHub stars](https://img.shields.io/github/stars/benedekrozemberczki/SimGNN.svg?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/benedekrozemberczki/SimGNN.svg?color=blue&style=plastic) ![License](https://img.shields.io/github/license/benedekrozemberczki/SimGNN.svg?color=blue&style=plastic)
 ============================================
 A PyTorch implementation of "SimGNN: A Neural Network Approach to Fast Graph Similarity Computation" (WSDM 2019). 
 <p align="center">
