@@ -79,6 +79,7 @@ Training a SimGNN model is handled by the `src/main.py` script which provides th
 ### Examples
 <p align="justify">
 The following commands learn a neural network and score on the test set. Training a SimGNN model on the default dataset.</p>
+
 ```
 python src/main.py
 ```
