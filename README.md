@@ -43,7 +43,7 @@ The code takes pairs of graphs for training from an input folder where each pair
 Every JSON file has the following key-value structure:
 
 ```javascript
-{"graph_1": [[0, 1],[1, 2],[2, 3],[3, 4]],
+{"graph_1": [[0, 1], [1, 2], [2, 3], [3, 4]],
  "graph_2": [[0, 1], [1, 2], [1, 3], [3, 4], [2, 4]],
  "labels_1": [2, 2, 2, 2],
  "labels_2": [2, 3, 2, 3],
