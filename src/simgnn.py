@@ -155,7 +155,7 @@ class SimGNNTrainer(object):
         """
         random.shuffle(self.training_graphs)
         batches = []
-        for graph in range(len(self.training_graphs), self.args.batch_size):
+        for graph in range(0, len(self.training_graphs), self.args.batch_size):
             batches.append(self.training_graphs[graph:graph+self.args.batch_size])
         return batches
 
