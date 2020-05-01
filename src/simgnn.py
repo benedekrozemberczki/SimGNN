@@ -167,9 +167,9 @@ class SimGNNTrainer(object):
         :return new_data: Dictionary of Torch Tensors.
         """
         new_data = dict()
-        edges_1 = data["graph_1"] + [[y,x] for x,y in data["graph_1"]]
+        edges_1 = data["graph_1"] + [[y, x] for x, y in data["graph_1"]]
 
-        edges_2 = data["graph_2"] + [[y,x] for x,y in data["graph_2"]]
+        edges_2 = data["graph_2"] + [[y, x] for x, y in data["graph_2"]]
 
         edges_1 = torch.from_numpy(np.array(edges_1, dtype=np.int64).T).type(torch.long)
         edges_2 = torch.from_numpy(np.array(edges_2, dtype=np.int64).T).type(torch.long)
