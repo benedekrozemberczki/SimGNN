@@ -1,6 +1,6 @@
 SimGNN
 ============================================
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/graph-edit-distance-computation-via-graph/graph-similarity-on-imdb)](https://paperswithcode.com/sota/graph-similarity-on-imdb?p=graph-edit-distance-computation-via-graph) [![codebeat badge](https://codebeat.co/badges/3f5b0686-92d0-4afb-9c7a-cd36bb5bd80f)](https://codebeat.co/projects/github-com-benedekrozemberczki-simgnn-master) [![repo size](https://img.shields.io/github/repo-size/benedekrozemberczki/SimGNN.svg)](https://github.com/benedekrozemberczki/SimGNN/archive/master.zip)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/graph-edit-distance-computation-via-graph/graph-similarity-on-imdb)](https://paperswithcode.com/sota/graph-similarity-on-imdb?p=graph-edit-distance-computation-via-graph) [![codebeat badge](https://codebeat.co/badges/3f5b0686-92d0-4afb-9c7a-cd36bb5bd80f)](https://codebeat.co/projects/github-com-benedekrozemberczki-simgnn-master) [![repo size](https://img.shields.io/github/repo-size/benedekrozemberczki/SimGNN.svg)](https://github.com/benedekrozemberczki/SimGNN/archive/master.zip)⠀
 
  
 A PyTorch implementation of **SimGNN: A Neural Network Approach to Fast Graph Similarity Computation (WSDM 2019)**. 
