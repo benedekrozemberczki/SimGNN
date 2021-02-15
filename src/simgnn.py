@@ -144,7 +144,7 @@ class SimGNNTrainer(object):
             data = process_pair(graph_pair)
             self.global_labels = self.global_labels.union(set(data["labels_1"]))
             self.global_labels = self.global_labels.union(set(data["labels_2"]))
-        self.global_labels = list(self.global_labels)
+        self.global_labels = sorted(self.global_labels)
         self.global_labels = {val:index  for index, val in enumerate(self.global_labels)}
         self.number_of_labels = len(self.global_labels)
 
