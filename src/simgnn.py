@@ -144,7 +144,7 @@ class SimGNNTrainer(object):
             data = process_pair(graph_pair)
             self.global_labels = self.global_labels.union(set(data["labels_1"]))
             self.global_labels = self.global_labels.union(set(data["labels_2"]))
-        self.global_labels = list(self.global_labels)
+        self.global_labels = sorted(self.global_labels)
         self.global_labels = {val:index  for index, val in enumerate(self.global_labels)}
         self.number_of_labels = len(self.global_labels)
 
@@ -264,3 +264,9 @@ class SimGNNTrainer(object):
         model_error = np.mean(self.scores)
         print("\nBaseline error: " +str(round(base_error, 5))+".")
         print("\nModel test error: " +str(round(model_error, 5))+".")
+
+    def save(self):
+        torch.save(self.model.state_dict(), self.args.save_path)
+
+    def load(self):
+        self.model.load_state_dict(torch.load(self.args.load_path))

@@ -107,6 +107,14 @@ Increasing the learning rate and the dropout.
 ```
 python src/main.py --learning-rate 0.01 --dropout 0.9
 ```
+You can save the trained model by adding the `--save-path` parameter.
+```
+python src/main.py --save-path /path/to/model-name
+```
+Then you can load a pretrained model using the `--load-path` parameter; **note that the model will be used as-is, no training will be performed**.
+```
+python src/main.py --load-path /path/to/model-name
+```
 --------------------------------------------------------------------------------
 
 **License**
