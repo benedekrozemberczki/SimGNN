@@ -80,4 +80,14 @@ def parameter_parser():
 
     parser.set_defaults(histogram=False)
 
+    parser.add_argument("--save-path",
+                        type=str,
+                        default=None,
+                        help="Where to save the trained model")
+
+    parser.add_argument("--load-path",
+                        type=str,
+                        default=None,
+                        help="Load a pretrained model")
+
     return parser.parse_args()
