@@ -4,7 +4,7 @@ SimGNN
 
 
  
-A PyTorch implementation of **SimGNN: A Neural Network Approach to Fast Graph Similarity Computation (WSDM 2019)**. 
+A **PyTorch** implementation of **SimGNN: A Neural Network Approach to Fast Graph Similarity Computation (WSDM 2019)**. 
 <p align="center">
   <img width="800" src="simgnn.jpg">
 </p>
